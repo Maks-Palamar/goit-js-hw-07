@@ -28,14 +28,19 @@ const images = [
   },
 ];
 
-const list = document.querySelector('.gallery');
+const linkList = document.querySelector('.gallery');
+let fragment = document.createDocumentFragment();
 
-images.forEach(function(data) {
-  const myElem = document.createElement('li');
-  list.appendChild(myElem);
-  const imgElem = document.createElement('img');
-  imgElem.src = data.url;
-  imgElem.alt = data.alt;
-  myElem.appendChild(imgElem);
-});
+images.forEach(function (image) {
+    let lis = document.createElement('li');
+    let imgs = document.createElement('img');
 
+    imgs.src = image.url;
+    imgs.alt = image.alt;
+
+    lis.appendChild(imgs);
+    fragment.appendChild(lis);
+  });
+
+
+linkList.appendChild(fragment);
