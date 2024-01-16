@@ -8,7 +8,8 @@ function formSubmit(event) {
     const passWrd = formTarg.elements.password.value.trim();
 
     if (eMail === "" || passWrd === "") {
-        return console.log("Будь ласка, заповніть всі поля!");
+        alert("Будь ласка, заповніть всі поля!");
+        return;
       }
 
     const uData = {
